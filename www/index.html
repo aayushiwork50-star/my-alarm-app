@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Alarm</title>
+<style>
+body{margin:0;background:#101827;color:white;font-family:Arial;text-align:center;padding:25px}
+h1{color:#70d6ff;margin-top:35px}
+.box{background:#1d2a40;padding:25px;border-radius:20px;margin-top:30px}
+input,button{font-size:20px;padding:13px;border:0;border-radius:10px;margin:12px}
+input{background:white;color:#111}
+button{background:#00a8e8;color:white;width:90%}
+</style>
+</head>
+<body>
+<h1>⏰ My Alarm</h1>
+<div class="box">
+<h2>अलार्म का समय</h2>
+<input type="time" id="alarmTime">
+<br>
+<label><input type="checkbox" id="daily" checked> रोज़ दोहराएँ</label>
+<br>
+<button onclick="setAlarm()">अलार्म सेट करें</button>
+<p id="status">अभी कोई अलार्म सेट नहीं है</p>
+</div>
+<script>
+function setAlarm(){
+const time=document.getElementById('alarmTime').value;
+if(!time){alert('पहले समय चुनें');return;}
+document.getElementById('status').textContent=
+'चुना गया समय: '+time+' | '+(document.getElementById('daily').checked?'रोज़':'एक बार');
+}
+</script>
+</body>
+</html>
